@@ -51,7 +51,7 @@ void iter_minmax(const T *const data, std::size_t len, T &min, T &max, int &cost
         T lmin = data[i-1], lmax = data[i];
 
         if (!left_is_less) {
-            std::swap(min, max);
+            std::swap(lmin, lmax);
         }
 
         if (lmin < running_min) { running_min = lmin; }

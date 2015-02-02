@@ -47,9 +47,18 @@ void iter_minmax(const T *const data, std::size_t len, T &min, T &max, int &cost
     assert(len != 0);
 
     for (std::size_t i = 1; i < len - (len & 1); i += 2) {
-        if      (data[i] < running_min) { running_min = data[i]; cost += 1; }
-        else if (data[i] > running_max) { running_max = data[i]; cost += 2; }
-        else { cost += 2; }
+        bool left_is_less = data[i] < data[i-1];
+        T lmin = data[i-1], lmax = data[i];
+
+        if (!left_is_less) {
+            std::swap(min, max);
+        }
+
+        if (lmin < running_min) { running_min = lmin; }
+        if (lmax > running_max) { running_max = lmax; }
+
+        cost += 3;
+
     }
 
     if (len & 1) {

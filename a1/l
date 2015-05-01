@@ -1,0 +1,9 @@
+Our array is: 0 
+Our array is: 0 
+Our array is: 1 0 
+Partitioned around 1, center is 1: Our array is: 0 1 
+Our array is: 1 0 
+Partitioned around 0, center is 1: Our array is: 0 1 
+Our array is: 2 0 1 
+Partitioned around 0, center is 1: Our array is: 0 2 1 
+Array not sorted! Our array is: 0 2 1 
